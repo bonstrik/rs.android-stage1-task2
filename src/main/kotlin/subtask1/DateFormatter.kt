@@ -6,27 +6,27 @@ val dev = false
 
 val 
     monthMap = mapOf(
-        1  to "Ô≠¢†‡Ô",
-        2  to "‰•¢‡†´Ô",
-        3  to "¨†‡‚†",
-        4  to "†Ø‡•´Ô",
-        5  to "¨†Ô",
-        6  to "®Ó≠Ô",
-        7  to "®Ó´Ô",
-        8  to "†¢£„·‚†",
-        9  to "·•≠‚Ô°‡Ô",
-        10 to "Æ™‚Ô°‡Ô",
-        11 to "≠ÆÔ°‡Ô",
-        12 to "§•™†°‡Ô"
+        1  to "—è–Ω–≤–∞—Ä—è",
+        2  to "—Ñ–µ–≤—Ä–∞–ª—è",
+        3  to "–º–∞—Ä—Ç–∞",
+        4  to "–∞–ø—Ä–µ–ª—è",
+        5  to "–º–∞—è",
+        6  to "–∏—é–Ω—è",
+        7  to "–∏—é–ª—è",
+        8  to "–∞–≤–≥—É—Å—Ç–∞",
+        9  to "—Å–µ–Ω—Ç—è–±—Ä—è",
+        10 to "–æ–∫—Ç—è–±—Ä—è",
+        11 to "–Ω–æ—è–±—Ä—è",
+        12 to "–¥–µ–∫–∞–±—Ä—è"
     )
 val dayOfW = mapOf(
-        1 to "ØÆ≠•§•´Ï≠®™",
-        2 to "¢‚Æ‡≠®™",
-        3 to "·‡•§†",
-        4 to "Á•‚¢•‡£",
-        5 to "ØÔ‚≠®Ê†",
-        6 to "·„°°Æ‚†",
-        7 to "¢Æ·™‡•·•≠Ï•"
+        1 to "–ø–æ–Ω–µ–¥–µ–ª—å–Ω–∏–∫",
+        2 to "–≤—Ç–æ—Ä–Ω–∏–∫",
+        3 to "—Å—Ä–µ–¥–∞",
+        4 to "—á–µ—Ç–≤–µ—Ä–≥",
+        5 to "–ø—è—Ç–Ω–∏—Ü–∞",
+        6 to "—Å—É–±–±–æ—Ç–∞",
+        7 to "–≤–æ—Å–∫—Ä–µ—Å–µ–Ω—å–µ"
     )
 
 class DateFormatter {
@@ -43,7 +43,7 @@ class DateFormatter {
 
         var res: String;
         if (!ok) { 
-            res = "í†™Æ£Æ §≠Ô ≠• ·„È•·‚¢„•‚" }
+            res = "–¢–∞–∫–æ–≥–æ –¥–Ω—è –Ω–µ —Å—É—â–µ—Å—Ç–≤—É–µ—Ç" }
         else {
             res = "${day.toInt()} ${monthMap[month.toInt()]}, ${dayOfW[d.getDayOfWeek().getValue()]}"
         }
@@ -63,31 +63,31 @@ fun main() {
 
     fun testDateFormatter1() {
         println("Run1")
-        if ("15 ¨†‡‚†, ¢Æ·™‡•·•≠Ï•" != formatter.toTextDay("15", "3", "2020"))
+        if ("15 –º–∞—Ä—Ç–∞, –≤–æ—Å–∫—Ä–µ—Å–µ–Ω—å–µ" != formatter.toTextDay("15", "3", "2020"))
           println("Bad")
     }
 
     fun testDateFormatter2() {
         println("Run2")
-        if ("í†™Æ£Æ §≠Ô ≠• ·„È•·‚¢„•‚" != formatter.toTextDay("29", "2", "2019"))
+        if ("–¢–∞–∫–æ–≥–æ –¥–Ω—è –Ω–µ —Å—É—â–µ—Å—Ç–≤—É–µ—Ç" != formatter.toTextDay("29", "2", "2019"))
           println("Bad")
     }
 
     fun testDateFormatter3() {
         println("Run3")
-        if ("19 ≠ÆÔ°‡Ô, Á•‚¢•‡£" != formatter.toTextDay("19", "11", "1998"))
+        if ("19 –Ω–æ—è–±—Ä—è, —á–µ—Ç–≤–µ—Ä–≥" != formatter.toTextDay("19", "11", "1998"))
           println("Bad")
     }
 
     fun testDateFormatter4() {
         println("Run4")
-        if ("31 §•™†°‡Ô, ¢‚Æ‡≠®™" != formatter.toTextDay("31", "12", "2024"))
+        if ("31 –¥–µ–∫–∞–±—Ä—è, –≤—Ç–æ—Ä–Ω–∏–∫" != formatter.toTextDay("31", "12", "2024"))
           println("Bad")
     }
 
     fun testDateFormatter5() {
         println("Run5")
-        if ("í†™Æ£Æ §≠Ô ≠• ·„È•·‚¢„•‚" != formatter.toTextDay("1", "13", "2020"))
+        if ("–¢–∞–∫–æ–≥–æ –¥–Ω—è –Ω–µ —Å—É—â–µ—Å—Ç–≤—É–µ—Ç" != formatter.toTextDay("1", "13", "2020"))
           println("Bad")
     }
 
