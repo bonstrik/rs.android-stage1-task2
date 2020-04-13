@@ -6,27 +6,27 @@ val dev = false
 
 val 
     monthMap = mapOf(
-        1  to " этрЁ ",
-        2  to "ЇхтЁры ",
-        3  to "ьрЁЄр",
-        4  to "ряЁхы ",
-        5  to "ьр ",
-        6  to "ш■э ",
-        7  to "ш■ы ",
-        8  to "ртуєёЄр",
-        9  to "ёхэЄ сЁ ",
-        10 to "юъЄ сЁ ",
-        11 to "эю сЁ ",
-        12 to "фхърсЁ "
+        1  to "января",
+        2  to "февраля",
+        3  to "марта",
+        4  to "апреля",
+        5  to "мая",
+        6  to "июня",
+        7  to "июля",
+        8  to "августа",
+        9  to "сентября",
+        10 to "октября",
+        11 to "ноября",
+        12 to "декабря"
     )
 val dayOfW = mapOf(
-        1 to "яюэхфхы№эшъ",
-        2 to "тЄюЁэшъ",
-        3 to "ёЁхфр",
-        4 to "ўхЄтхЁу",
-        5 to "я ЄэшЎр",
-        6 to "ёєссюЄр",
-        7 to "тюёъЁхёхэ№х"
+        1 to "понедельник",
+        2 to "вторник",
+        3 to "среда",
+        4 to "четверг",
+        5 to "пятница",
+        6 to "суббота",
+        7 to "воскресенье"
     )
 
 class DateFormatter {
@@ -43,7 +43,7 @@ class DateFormatter {
 
         var res: String;
         if (!ok) { 
-            res = "╥ръюую фэ  эх ёє∙хёЄтєхЄ" }
+            res = "Такого дня не существует" }
         else {
             res = "${day.toInt()} ${monthMap[month.toInt()]}, ${dayOfW[d.getDayOfWeek().getValue()]}"
         }
@@ -63,31 +63,31 @@ fun main() {
 
     fun testDateFormatter1() {
         println("Run1")
-        if ("15 ьрЁЄр, тюёъЁхёхэ№х" != formatter.toTextDay("15", "3", "2020"))
+        if ("15 марта, воскресенье" != formatter.toTextDay("15", "3", "2020"))
           println("Bad")
     }
 
     fun testDateFormatter2() {
         println("Run2")
-        if ("╥ръюую фэ  эх ёє∙хёЄтєхЄ" != formatter.toTextDay("29", "2", "2019"))
+        if ("Такого дня не существует" != formatter.toTextDay("29", "2", "2019"))
           println("Bad")
     }
 
     fun testDateFormatter3() {
         println("Run3")
-        if ("19 эю сЁ , ўхЄтхЁу" != formatter.toTextDay("19", "11", "1998"))
+        if ("19 ноября, четверг" != formatter.toTextDay("19", "11", "1998"))
           println("Bad")
     }
 
     fun testDateFormatter4() {
         println("Run4")
-        if ("31 фхърсЁ , тЄюЁэшъ" != formatter.toTextDay("31", "12", "2024"))
+        if ("31 декабря, вторник" != formatter.toTextDay("31", "12", "2024"))
           println("Bad")
     }
 
     fun testDateFormatter5() {
         println("Run5")
-        if ("╥ръюую фэ  эх ёє∙хёЄтєхЄ" != formatter.toTextDay("1", "13", "2020"))
+        if ("Такого дня не существует" != formatter.toTextDay("1", "13", "2020"))
           println("Bad")
     }
 
